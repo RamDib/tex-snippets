@@ -103,22 +103,22 @@ endsnippet
 
 context "notmath()"
 snippet bold "\textbf{...}" 
-\textbf{${1:${VISUAL}}} $0
+\textbf{${1:${VISUAL}}}$0
 endsnippet
 
 context "notmath()"
 snippet ital "\textit{...}" 
-\textit{${1:${VISUAL}}} $0
+\textit{${1:${VISUAL}}}$0
 endsnippet
 
 context "notmath()"
 snippet underline "\underline{...}" 
-\underline{${1:${VISUAL}}} $0
+\underline{${1:${VISUAL}}}$0
 endsnippet
 
 context "notmath()"
 snippet mk "Inline Math" wA
-\( ${1:${VISUAL}} \) $0
+\( ${1:${VISUAL}} \)$0
 endsnippet
 
 context "notmath()"
@@ -126,7 +126,6 @@ snippet dm "Math" wA
 \[
     ${1:${VISUAL}}
 \]
-
 $0
 endsnippet
 
@@ -135,7 +134,6 @@ snippet ali "Align" bA
 \begin{align*}
 	${1:${VISUAL}}
 \end{align*}
-
 $0
 endsnippet
 
@@ -323,12 +321,12 @@ endsnippet
 
 
 context "math()"
-snippet pm "\pm" eA
+snippet pm "\pm" e
 \pm
 endsnippet
 
 context "math()"
-snippet mp "\mp" eA
+snippet mp "\mp" e
 \mp
 endsnippet
 
@@ -343,7 +341,7 @@ snippet times "\times" eA
 endsnippet
 
 context "math()"
-snippet stminus "\setminus" eA
+snippet setminus "\setminus" eA
 \setminus
 endsnippet
 
@@ -456,27 +454,27 @@ snippet lr "left( right)" i
 endsnippet
 
 context "math()"
-snippet lr( "left( right)" i
+snippet lr( "left( right)" iA
 \left( ${1:${VISUAL}} \right) $0
 endsnippet
 
 context "math()"
-snippet lr| "left| right|" i
+snippet lr| "left| right|" iA
 \left| ${1:${VISUAL}} \right| $0
 endsnippet
 
 context "math()"
-snippet lr{ "left\{ right\}" i
+snippet lr{ "left\{ right\}" iA
 \left\\{ ${1:${VISUAL}} \right\\} $0
 endsnippet
 
 context "math()"
-snippet lrb "left\{ right\}" i
+snippet lrb "left\{ right\}" iA
 \left\\{ ${1:${VISUAL}} \right\\} $0
 endsnippet
 
 context "math()"
-snippet lr[ "left[ right]" i
+snippet lr[ "left[ right]" iA
 \left[ ${1:${VISUAL}} \right] $0
 endsnippet
 
@@ -487,8 +485,8 @@ endsnippet
 
 
 context "math()"
-snippet ... "\cdots" eA
-\cdots
+snippet ... "\dots" eA
+\dots
 endsnippet
 
 context "math()"
@@ -626,5 +624,105 @@ endsnippet
 context "math()"
 snippet iiint "\iiint" eA
 \iiint
+endsnippet
+
+context "math()"
+snippet mbb "Math Blackboard-Bold" eA
+\mathbb{${1:${VISUAL}}}
+endsnippet
+
+context "math()"
+snippet mbf "Math Bold-Font" eA
+\mathbf{${1:${VISUAL}}}
+endsnippet
+
+context "math()"
+snippet mrm "Math Roman Font" eA
+\mathrm{${1:${VISUAL}}}
+endsnippet
+
+context "math()"
+snippet txt "Normal Text" eA
+\mathrm{${1:${VISUAL}}}
+endsnippet
+
+context "math()"
+snippet sin "\sin" iA
+\sin
+endsnippet
+
+context "math()"
+snippet cos "\cos" iA
+\cos
+endsnippet
+
+context "math()"
+snippet tan "\tan" iA
+\tan
+endsnippet
+
+context "math()"
+snippet sec "\sec" iA
+\sec
+endsnippet
+
+context "math()"
+snippet csc "\csc" iA
+\csc
+endsnippet
+
+context "math()"
+snippet cot "\cot" iA
+\cot
+endsnippet
+
+context "math()"
+snippet exp "\exp" iA
+\exp
+endsnippet
+
+context "math()"
+snippet log "\log" iA
+\log
+endsnippet
+
+context "math()"
+snippet min "\min" iA
+\min
+endsnippet
+
+context "math()"
+snippet max "\max" iA
+\max
+endsnippet
+
+context "math()"
+snippet inf "\inf" iA
+\inf
+endsnippet
+
+context "math()"
+snippet supr "\sup" iA
+\sup
+endsnippet
+
+context "math()"
+snippet arg "\arg" iA
+\arg
+endsnippet
+
+context "math()"
+snippet ker "\ker" iA
+\ker
+endsnippet
+
+context "math()"
+snippet dim "\dim" iA
+\dim
+endsnippet
+
+context "math()"
+snippet det "\det" iA
+\det
 endsnippet
 
