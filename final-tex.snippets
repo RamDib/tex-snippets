@@ -1,3 +1,9 @@
+#
+# My LaTeX Snippets
+#
+
+# Context Functions Definition
+
 global !p
 def math():
 	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
@@ -13,6 +19,9 @@ def env(name):
 	[x,y] = vim.eval("vimtex#env#is_inside('" + name + "')") 
 	return x != '0' and y != '0'
 endglobal
+
+
+# Document Structure
 
 context "notmath()"
 snippet section "\section{...}" b
@@ -56,6 +65,9 @@ snippet *subsubsection "\subsubsection*{...}" b
 $0
 endsnippet
 
+
+# Text Environments
+
 context "notmath()"
 snippet beg "\begin{...} / \end{...}" b 
 \begin{$1}
@@ -84,6 +96,9 @@ snippet desc "\begin{description} ... \end{enumerate}" b
 \end{description}
 endsnippet
 
+
+# References
+
 context "notmath()"
 snippet label "\label{sec:item}" b
 \label{${1:sec}:${2:item}}
@@ -101,6 +116,9 @@ snippet footnote "\footnote{...}" i
 \footnote{$1} $0
 endsnippet
 
+
+# Text Fonts
+
 context "notmath()"
 snippet bold "\textbf{...}" 
 \textbf{${1:${VISUAL}}}$0
@@ -115,6 +133,9 @@ context "notmath()"
 snippet underline "\underline{...}" 
 \underline{${1:${VISUAL}}}$0
 endsnippet
+
+
+# Math Environment
 
 context "notmath()"
 snippet mk "Inline Math" wA
@@ -137,6 +158,9 @@ snippet ali "Align" bA
 $0
 endsnippet
 
+
+# Math Mode Accents
+
 context "math()"
 snippet bar "Bar" i
 \bar{${1:${VISUAL}}} $0
@@ -147,6 +171,8 @@ snippet vec "Vec" i
 \vec{${1:${VISUAL}}} $0
 endsnippet
 
+
+# Greek Letters
 
 context "math()"
 snippet alpha "\alpha" eA
@@ -279,6 +305,8 @@ snippet Omega "\Omega" eA
 endsnippet
 
 
+# Binart Relations
+
 context "math()"
 snippet <= "Less than or equal" eA 
 \leq
@@ -319,6 +347,8 @@ snippet inn "\in" eA
 \in
 endsnippet
 
+
+# Binary Operators
 
 context "math()"
 snippet pm "\pm" e
@@ -381,6 +411,8 @@ snippet otimes "\otimes" eA
 endsnippet
 
 
+# BIG Operators
+
 context "math()"
 snippet sum "\sum" eA
 \sum
@@ -407,10 +439,22 @@ snippet int "\int" eA
 endsnippet
 
 context "math()"
+snippet iint "\iint" eA
+\iint
+endsnippet
+
+context "math()"
+snippet iiint "\iiint" eA
+\iiint
+endsnippet
+
+context "math()"
 snippet oint "\oint" eA
 \oint
 endsnippet
 
+
+# Arrows
 
 context "math()"
 snippet gets "\gets" eA
@@ -442,6 +486,8 @@ snippet iff "\iff" eA
 \iff
 endsnippet
 
+
+# Delimeters
 
 context "math()"
 snippet () "left( right)" eA
@@ -484,6 +530,8 @@ snippet lra "leftangle rightangle" eA
 endsnippet
 
 
+# Miscellaneous Symbols
+
 context "math()"
 snippet ... "\dots" eA
 \dots
@@ -514,6 +562,8 @@ snippet lnot "\lnot" eA
 \lnot
 endsnippet
 
+
+# Fractions
 
 context "math()"
 snippet // "Fraction" eA
@@ -546,6 +596,9 @@ snip.rv = stripped[0:i] + "\\frac{" + stripped[i+1:-1] + "}"
 `{$1}$0
 endsnippet
 
+
+# Subscript
+
 context "math()"
 snippet '([A-Za-z])(\d)' "auto subscript" wrA
 `!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)`
@@ -557,6 +610,14 @@ snippet '([A-Za-z])_(\d\d)' "auto subscript2" wrA
 endsnippet
 
 context "math()"
+snippet __ "subscript" eA
+_{$1}$0
+endsnippet
+
+
+# Matrices
+
+context "math()"
 snippet pmat "pmat" eA
 \begin{pmatrix} $1 \end{pmatrix} $0
 endsnippet
@@ -565,6 +626,9 @@ context "math()"
 snippet bmat "bmat" eA
 \begin{bmatrix} $1 \end{bmatrix} $0
 endsnippet
+
+
+# Surds and Exponents
 
 context "math()"
 snippet sq "\sqrt{}" eA
@@ -591,10 +655,8 @@ snippet rd "to the ... power" eA
 ^{($1)}$0
 endsnippet
 
-context "math()"
-snippet __ "subscript" eA
-_{$1}$0
-endsnippet
+
+# Commonly Used Snippets
 
 context "math()"
 snippet dint "Definite Integral" eA
@@ -616,15 +678,8 @@ snippet dlim "Defined Lim" eA
 \lim_{${1:n} \to ${2:\infty}} ${3:${VISUAL}} $0
 endsnippet
 
-context "math()"
-snippet iint "\iint" eA
-\iint
-endsnippet
 
-context "math()"
-snippet iiint "\iiint" eA
-\iiint
-endsnippet
+# Math Fonts
 
 context "math()"
 snippet mbb "Math Blackboard-Bold" eA
@@ -645,6 +700,9 @@ context "math()"
 snippet txt "Normal Text" eA
 \mathrm{${1:${VISUAL}}}
 endsnippet
+
+
+# Log-like Functions
 
 context "math()"
 snippet sin "\sin" iA
