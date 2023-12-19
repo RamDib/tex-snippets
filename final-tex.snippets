@@ -21,6 +21,67 @@ def env(name):
 endglobal
 
 
+# Document Template
+
+snippet template "LaTeX Document Template" b
+\documentclass[a4paper]{article}
+
+% PACKAGES
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{parskip}
+\usepackage{tcolorbox}
+
+% THEOREMS
+\newtcolorbox{theorem}[1]{
+    colback=brown!5!white,
+    colframe=brown!50!black,
+    fonttitle=\bfseries, 
+    title={Theorem. #1}
+}
+\newtcolorbox{definition}[1]{
+    colback=gray!5!white,
+    colframe=gray!35!black,
+    fonttitle=\bfseries, 
+    title={Definition. #1},
+    parbox=false
+}
+\newtcolorbox{example}{
+    colback=blue!5!white,
+    colframe=blue!35!black,
+    fonttitle=\bfseries, 
+    title={Example.},
+    parbox=false
+}
+\newtcolorbox{proof}{
+    arc=0pt,
+    outer arc=0pt,
+    leftrule=0pt,
+    rightrule=0pt,
+    bottomrule=0pt,
+    colback=gray!5!white,
+    colframe=white!60!black,
+    fonttitle=\bfseries, 
+    title={Proof.},
+    parbox=false
+}
+\AtEndEnvironment{proof}{\null\hfill{$\square$}}
+
+% TITLE
+\title{$1}
+\author{Ramiro Dibur}
+\date{\today}
+
+\begin{document}
+    \maketitle
+
+    $0
+\end{document}
+endsnippet
+
+
 # Document Structure
 
 context "notmath()"
@@ -94,6 +155,37 @@ snippet desc "\begin{description} ... \end{enumerate}" b
 \begin{description}
     \item[$1] $0
 \end{description}
+endsnippet
+
+
+# Theorem-like Environments
+
+context "notmath()"
+snippet thm "\begin{theorem} ... \end{enumerate}" bA
+\begin{theorem}{$1}
+    $0
+\end{theorem}
+endsnippet
+
+context "notmath()"
+snippet def "\begin{definition} ... \end{enumerate}" bA
+\begin{definition}{$1}
+    $0
+\end{definition}
+endsnippet
+
+context "notmath()"
+snippet exmp "\begin{example} ... \end{enumerate}" bA
+\begin{example}
+    $0
+\end{example}
+endsnippet
+
+context "notmath()"
+snippet def "\begin{proof} ... \end{enumerate}" bA
+\begin{proof}
+    $0
+\end{proof}
 endsnippet
 
 
@@ -698,7 +790,7 @@ endsnippet
 
 context "math()"
 snippet txt "Normal Text" eA
-\mathrm{${1:${VISUAL}}}
+\text{${1:${VISUAL}}}
 endsnippet
 
 
